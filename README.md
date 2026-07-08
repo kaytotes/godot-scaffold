@@ -4,6 +4,9 @@ A starting point for a Godot 4 (C#) project that already boots to a working game
 instead of an empty scene: a main menu, async level loading with a loading screen, a
 pause menu, and a debug overlay are all wired up and ready to build gameplay on top of.
 
+<img width="925" height="530" alt="image" src="https://github.com/user-attachments/assets/ccfff457-65cc-47ee-95df-3d977ffddfe6" />
+
+
 ## Why this exists
 
 Every new Godot + C# project ends up rebuilding the same handful of things before any
