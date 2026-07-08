@@ -1,0 +1,53 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/ui/debug/DebugOverlay.cs" id="1_debug"]
+
+[node name="DebugOverlay" type="Control" node_paths=PackedStringArray("PerformanceLabel", "GameStateLabel", "BuildLabel")]
+script = ExtResource("1_debug")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+PerformanceLabel = NodePath("PerformanceLabel")
+GameStateLabel = NodePath("GameStateLabel")
+BuildLabel = NodePath("BuildLabel")
+
+[node name="PerformanceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 260.0
+offset_bottom = 100.0
+text = "FPS: 0"
+
+[node name="GameStateLabel" type="Label" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 0
+
+[node name="BuildLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 2

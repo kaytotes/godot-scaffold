@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://davq1govi0heb"]
+
+[ext_resource type="Script" uid="uid://c17cui00wf3nx" path="res://src/core/Game.cs" id="1_5sg27"]
+[ext_resource type="Script" uid="uid://cemlttam2pag4" path="res://src/core/WorldInstance.cs" id="2_8xnxh"]
+[ext_resource type="Script" uid="uid://cecnfcmvjnh5" path="res://src/engine/subsystems/SceneSubsystem.cs" id="2_a04qp"]
+[ext_resource type="Script" uid="uid://h5klpi22tynr" path="res://src/engine/subsystems/WorldBuilderSubsystem.cs" id="3_a04qp"]
+[ext_resource type="Script" path="res://src/world/subsystems/ExampleSubsystem.cs" id="4_example"]
+
+[node name="Game" type="Node" unique_id=751188289]
+process_mode = 3
+script = ExtResource("1_5sg27")
+
+[node name="EngineSubsystems" type="Node" parent="." unique_id=236362739]
+
+[node name="SceneSubsystem" type="Node" parent="EngineSubsystems" unique_id=351425881 node_paths=PackedStringArray("LoadingLayer", "LoadingRoot")]
+script = ExtResource("2_a04qp")
+LoadingLayer = NodePath("../../Interface/LoadingLayer")
+LoadingRoot = NodePath("../../Interface/LoadingLayer/LoadingRoot")
+
+[node name="WorldBuilderSubsystem" type="Node" parent="EngineSubsystems" unique_id=663123249 node_paths=PackedStringArray("World", "MenuLayer", "PauseRoot", "SceneSubsystem")]
+script = ExtResource("3_a04qp")
+World = NodePath("../../World")
+MenuLayer = NodePath("../../Interface/MenuLayer")
+PauseRoot = NodePath("../../Interface/PauseLayer/PauseRoot")
+SceneSubsystem = NodePath("../SceneSubsystem")
+
+[node name="World" type="Node3D" parent="." unique_id=134768133]
+process_mode = 1
+script = ExtResource("2_8xnxh")
+
+[node name="LevelRoot" type="Node3D" parent="World" unique_id=1221141539]
+unique_name_in_owner = true
+
+[node name="EntityRoot" type="Node3D" parent="World" unique_id=1173852002]
+unique_name_in_owner = true
+
+[node name="EffectRoot" type="Node3D" parent="World" unique_id=2049563712]
+unique_name_in_owner = true
+
+[node name="WorldSubsystems" type="Node" parent="World" unique_id=2003041209]
+
+[node name="ExampleSubsystem" type="Node" parent="World/WorldSubsystems"]
+script = ExtResource("4_example")
+
+[node name="Interface" type="Node" parent="." unique_id=1279196372]
+
+[node name="MenuLayer" type="CanvasLayer" parent="Interface" unique_id=663035817]
+process_mode = 1
+layer = 10
+
+[node name="MenuRoot" type="Control" parent="Interface/MenuLayer" unique_id=339777314]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingLayer" type="CanvasLayer" parent="Interface" unique_id=1759095262]
+process_mode = 3
+layer = 20
+visible = false
+
+[node name="LoadingRoot" type="Control" parent="Interface/LoadingLayer" unique_id=703260505]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUDLayer" type="CanvasLayer" parent="Interface" unique_id=1750836877]
+process_mode = 1
+layer = 30
+visible = false
+
+[node name="HUDRoot" type="Control" parent="Interface/HUDLayer" unique_id=1856427122]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseLayer" type="CanvasLayer" parent="Interface" unique_id=195111090]
+process_mode = 3
+layer = 40
+
+[node name="PauseRoot" type="Control" parent="Interface/PauseLayer" unique_id=1833914394]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugLayer" type="CanvasLayer" parent="Interface" unique_id=707570629]
+process_mode = 3
+layer = 50
+
+[node name="DebugRoot" type="Control" parent="Interface/DebugLayer" unique_id=884856658]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
