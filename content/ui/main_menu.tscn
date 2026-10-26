@@ -1,8 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://bvfqas1d0n5ph" path="res://src/ui/menu/MainMenu.cs" id="1_mainmenu"]
+[ext_resource type="Script" uid="uid://bvfqas1d0n5ph" path="res://src/ui/menu/main_menu.gd" id="1_mainmenu"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("PlayButton", "QuitButton")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "quit_button")]
 script = ExtResource("1_mainmenu")
 layout_mode = 3
 anchors_preset = 15
@@ -10,8 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-PlayButton = NodePath("ButtonContainer/PlayButton")
-QuitButton = NodePath("ButtonContainer/QuitButton")
+play_button = NodePath("ButtonContainer/PlayButton")
+quit_button = NodePath("ButtonContainer/QuitButton")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

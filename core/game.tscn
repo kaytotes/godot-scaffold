@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://davq1govi0heb"]
 
-[ext_resource type="Script" uid="uid://c17cui00wf3nx" path="res://src/core/Game.cs" id="1_5sg27"]
-[ext_resource type="Script" uid="uid://cemlttam2pag4" path="res://src/core/WorldInstance.cs" id="2_8xnxh"]
-[ext_resource type="Script" uid="uid://cecnfcmvjnh5" path="res://src/engine/subsystems/SceneSubsystem.cs" id="2_a04qp"]
-[ext_resource type="Script" uid="uid://h5klpi22tynr" path="res://src/engine/subsystems/WorldBuilderSubsystem.cs" id="3_a04qp"]
-[ext_resource type="Script" path="res://src/world/subsystems/ExampleSubsystem.cs" id="4_example"]
+[ext_resource type="Script" uid="uid://c17cui00wf3nx" path="res://src/core/game.gd" id="1_5sg27"]
+[ext_resource type="Script" uid="uid://cemlttam2pag4" path="res://src/core/world_instance.gd" id="2_8xnxh"]
+[ext_resource type="Script" uid="uid://cecnfcmvjnh5" path="res://src/engine/subsystems/scene_subsystem.gd" id="2_a04qp"]
+[ext_resource type="Script" uid="uid://h5klpi22tynr" path="res://src/engine/subsystems/world_builder_subsystem.gd" id="3_a04qp"]
+[ext_resource type="Script" uid="uid://dpi15pdlrdpgg" path="res://src/world/subsystems/example_subsystem.gd" id="4_example"]
 
 [node name="Game" type="Node" unique_id=751188289]
 process_mode = 3
@@ -12,17 +12,17 @@ script = ExtResource("1_5sg27")
 
 [node name="EngineSubsystems" type="Node" parent="." unique_id=236362739]
 
-[node name="SceneSubsystem" type="Node" parent="EngineSubsystems" unique_id=351425881 node_paths=PackedStringArray("LoadingLayer", "LoadingRoot")]
+[node name="SceneSubsystem" type="Node" parent="EngineSubsystems" unique_id=351425881 node_paths=PackedStringArray("loading_layer", "loading_root")]
 script = ExtResource("2_a04qp")
-LoadingLayer = NodePath("../../Interface/LoadingLayer")
-LoadingRoot = NodePath("../../Interface/LoadingLayer/LoadingRoot")
+loading_layer = NodePath("../../Interface/LoadingLayer")
+loading_root = NodePath("../../Interface/LoadingLayer/LoadingRoot")
 
-[node name="WorldBuilderSubsystem" type="Node" parent="EngineSubsystems" unique_id=663123249 node_paths=PackedStringArray("World", "MenuLayer", "PauseRoot", "SceneSubsystem")]
+[node name="WorldBuilderSubsystem" type="Node" parent="EngineSubsystems" unique_id=663123249 node_paths=PackedStringArray("world", "menu_layer", "pause_root", "scene_subsystem")]
 script = ExtResource("3_a04qp")
-World = NodePath("../../World")
-MenuLayer = NodePath("../../Interface/MenuLayer")
-PauseRoot = NodePath("../../Interface/PauseLayer/PauseRoot")
-SceneSubsystem = NodePath("../SceneSubsystem")
+world = NodePath("../../World")
+menu_layer = NodePath("../../Interface/MenuLayer")
+pause_root = NodePath("../../Interface/PauseLayer/PauseRoot")
+scene_subsystem = NodePath("../SceneSubsystem")
 
 [node name="World" type="Node3D" parent="." unique_id=134768133]
 process_mode = 1

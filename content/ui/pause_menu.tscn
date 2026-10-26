@@ -1,8 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://src/ui/pause/PauseMenu.cs" id="1_pausemenu"]
+[ext_resource type="Script" uid="uid://cp8gtiam8f7jt" path="res://src/ui/pause/pause_menu.gd" id="1_pausemenu"]
 
-[node name="PauseMenu" type="Control" node_paths=PackedStringArray("ReturnToMenuButton", "QuitButton")]
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("return_to_menu_button", "quit_button")]
 script = ExtResource("1_pausemenu")
 layout_mode = 3
 anchors_preset = 15
@@ -10,8 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-ReturnToMenuButton = NodePath("ButtonContainer/ReturnToMenuButton")
-QuitButton = NodePath("ButtonContainer/QuitButton")
+return_to_menu_button = NodePath("ButtonContainer/ReturnToMenuButton")
+quit_button = NodePath("ButtonContainer/QuitButton")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

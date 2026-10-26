@@ -1,8 +1,8 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://src/ui/debug/DebugOverlay.cs" id="1_debug"]
+[ext_resource type="Script" uid="uid://de8tqoppo05dc" path="res://src/ui/debug/debug_overlay.gd" id="1_debug"]
 
-[node name="DebugOverlay" type="Control" node_paths=PackedStringArray("PerformanceLabel", "GameStateLabel", "BuildLabel")]
+[node name="DebugOverlay" type="Control" node_paths=PackedStringArray("performance_label", "game_state_label", "build_label")]
 script = ExtResource("1_debug")
 layout_mode = 3
 anchors_preset = 15
@@ -11,9 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-PerformanceLabel = NodePath("PerformanceLabel")
-GameStateLabel = NodePath("GameStateLabel")
-BuildLabel = NodePath("BuildLabel")
+performance_label = NodePath("PerformanceLabel")
+game_state_label = NodePath("GameStateLabel")
+build_label = NodePath("BuildLabel")
 
 [node name="PerformanceLabel" type="Label" parent="."]
 layout_mode = 0
